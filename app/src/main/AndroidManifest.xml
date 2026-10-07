@@ -38,6 +38,18 @@
             android:name=".views.BienvenidaActivity"
             android:exported="false" />
 
+        <!-- Pantalla de Preferencias de Monitoreo -->
+        <activity
+            android:name=".views.PreferenciasActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pantalla de CRUD de Mediciones de Luz IoT -->
+        <activity
+            android:name=".views.MedicionesActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

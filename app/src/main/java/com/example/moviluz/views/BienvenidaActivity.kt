@@ -43,10 +43,14 @@ class BienvenidaActivity : AppCompatActivity() {
     }
 
     fun onPreferenciasClick(view: View) {
-        Toast.makeText(this, "Sección de Preferencias", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, PreferenciasActivity::class.java)
+        intent.putExtra("usuario", emailUsuario)
+        startActivity(intent)
     }
 
     fun onVerLecturasClick(view: View) {
-        Toast.makeText(this, "Sección de Mediciones de Luz", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MedicionesActivity::class.java)
+        intent.putExtra("usuario", emailUsuario)
+        startActivity(intent)
     }
 }
