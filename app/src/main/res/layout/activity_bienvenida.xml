@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".views.BienvenidaActivity">
+
+    <!-- Logo MoviLuz -->
+    <ImageView
+        android:id="@+id/imgLogoBienvenida"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Logo MoviLuz"
+        android:src="@drawable/ic_light_bulb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Mensaje de bienvenida saludando al usuario con el email recibido por Intent -->
+    <TextView
+        android:id="@+id/txtBienvenida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="¡Bienvenido!"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoBienvenida" />
+
+    <!-- Presentación del servicio IoT de MoviLuz -->
+    <TextView
+        android:id="@+id/txtServicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="MoviLuz es una plataforma IoT inteligente para el monitoreo y control en tiempo real de la intensidad lumínica en tus instalaciones, invernaderos y oficinas."
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtBienvenida" />
+
+    <!-- Botón para navegar a la pantalla de Preferencias -->
+    <Button
+        android:id="@+id/btnPreferencias"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="onPreferenciasClick"
+        android:text="Preferencias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtServicio" />
+
+    <!-- Botón para navegar a la pantalla de Lecturas/Mediciones -->
+    <Button
+        android:id="@+id/btnVerLecturas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#2196F3"
+        android:onClick="onVerLecturasClick"
+        android:text="Ver Mediciones de Luz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPreferencias" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

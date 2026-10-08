@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <!-- Logo MoviLuz centrado en la parte superior -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="Logo MoviLuz"
+            android:src="@drawable/ic_light_bulb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Título de la pantalla -->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="MoviLuz"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+        <TextView
+            android:id="@+id/txtSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Monitoreo de Luz IoT - Iniciar Sesión"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+        <!-- Campo de texto para ingresar el usuario/correo -->
+        <EditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSubtitulo" />
+
+        <!-- Campo de contraseña con texto oculto -->
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/btnMostrarPassword"
+            app:layout_constraintStart_toStartOf="@id/edtUsuario"
+            app:layout_constraintTop_toBottomOf="@id/edtUsuario" />
+
+        <!-- Botón para alternar la visibilidad de la contraseña -->
+        <ImageButton
+            android:id="@+id/btnMostrarPassword"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Mostrar u ocultar contraseña"
+            android:onClick="onMostrarPasswordClick"
+            android:src="@drawable/ic_visibility_24"
+            app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
+            app:layout_constraintEnd_toEndOf="@id/edtUsuario"
+            app:layout_constraintTop_toTopOf="@+id/edtPassword" />
+
+        <!-- Casilla de verificación para recordar sesión -->
+        <CheckBox
+            android:id="@+id/chkRecordarme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Recordarme"
+            app:layout_constraintStart_toStartOf="@id/edtPassword"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+        <!-- Botón de ingresar vinculado a onIngresarClick -->
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="onIngresarClick"
+            android:text="Ingresar"
+            app:layout_constraintEnd_toEndOf="@id/edtUsuario"
+            app:layout_constraintStart_toStartOf="@id/edtPassword"
+            app:layout_constraintTop_toBottomOf="@id/chkRecordarme" />
+
+        <!-- Botón de Limpiar: resetea campos de usuario, contraseña y recordarme -->
+        <Button
+            android:id="@+id/btnLimpiar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF0000"
+            android:onClick="onLimpiarClick"
+            android:text="Limpiar"
+            app:layout_constraintEnd_toEndOf="@+id/btnIngresar"
+            app:layout_constraintStart_toStartOf="@+id/btnIngresar"
+            app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+
+        <!-- Botón para ir a la pantalla de Registro -->
+        <Button
+            android:id="@+id/btnIrARegistro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#4CAF50"
+            android:onClick="onIrARegistroClick"
+            android:text="¿No tienes cuenta? Regístrate"
+            app:layout_constraintEnd_toEndOf="@+id/btnLimpiar"
+            app:layout_constraintStart_toStartOf="@+id/btnLimpiar"
+            app:layout_constraintTop_toBottomOf="@+id/btnLimpiar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
