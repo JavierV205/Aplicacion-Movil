@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!--
+        MoviLuz — Ícono: Bombilla con engranaje interior
+        Estilo minimalista y sobrio sobre fondo oscuro (#263238)
+
+        Estructura:
+          1. Cabeza circular de la bombilla (blanco)
+          2. Falda y base roscada (blanco)
+          3. Engranaje de 8 dientes centrado en la bombilla (oscuro)
+          4. Agujero central del engranaje (oscuro)
+
+        Viewport: 108 × 108 (zona segura adaptive icon: 18–90)
+        Centro del diseño: (54, 42)
+    -->
+
+    <!-- ═══════════════════════════════════════════
+         1. Cabeza circular de la bombilla — r=18
+            Centro: (54, 42)   Top: (54,24)  Bottom: (54,60)
+         ═══════════════════════════════════════════ -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M 72,42
+            A 18,18 0 1,1 36,42
+            A 18,18 0 1,1 72,42
+            Z" />
+
+    <!-- ═══════════════════════════════════════════
+         2. Falda y base roscada (3 anillos)
+            Arranca donde el círculo termina (x≈44–64 en y=57)
+            Cada anillo se estrecha 2dp a cada lado
+         ═══════════════════════════════════════════ -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M 64,57
+            L 63,70
+            L 62,70  L 62,73
+            L 60,73  L 60,76
+            L 48,76  L 48,73
+            L 46,73  L 46,70
+            L 45,70
+            L 44,57
+            Z" />
+
+    <!-- ═══════════════════════════════════════════
+         3. Engranaje de 8 dientes
+            Centro: (54, 42)
+            Radio exterior: 10   Radio interior (valles): 7
+            Ángulo por diente: 45°  |  Semiancho: 11.25°
+
+            Puntos calculados (ángulo → x, y):
+              Exteriores (r=10): cada 45° ± 11.25°
+              Interiores  (r=7): cada 45° + 22.5°
+         ═══════════════════════════════════════════ -->
+    <path
+        android:fillColor="#263238"
+        android:pathData="
+            M  63.81,40.05
+            L  63.81,43.95
+            L  60.47,44.67
+            L  62.31,47.54
+            L  59.54,50.31
+            L  56.67,48.47
+            L  55.95,51.81
+            L  52.05,51.81
+            L  51.33,48.47
+            L  48.46,50.31
+            L  45.69,47.54
+            L  47.53,44.67
+            L  44.19,43.95
+            L  44.19,40.05
+            L  47.53,39.33
+            L  45.69,36.46
+            L  48.46,33.69
+            L  51.33,35.53
+            L  52.05,32.19
+            L  55.95,32.19
+            L  56.67,35.53
+            L  59.54,33.69
+            L  62.31,36.46
+            L  60.47,39.33
+            Z" />
+
+    <!-- ═══════════════════════════════════════════
+         4. Agujero central del engranaje — r=3.5
+            Centro: (54, 42)
+         ═══════════════════════════════════════════ -->
+    <path
+        android:fillColor="#263238"
+        android:pathData="
+            M 57.5,42
+            A 3.5,3.5 0 1,1 50.5,42
+            A 3.5,3.5 0 1,1 57.5,42
+            Z" />
+
+</vector>
